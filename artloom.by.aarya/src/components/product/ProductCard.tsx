@@ -47,8 +47,8 @@ export function ProductCard({ product }: ProductCardProps) {
         )}
 
         {/* Big stylized title in the visual block */}
-        <div className="w-10 h-10 rounded-full bg-white shadow-2xs border border-pink-200 flex items-center justify-center text-pink-600 text-base mb-2">
-          🌸
+        <div className="w-auto h-auto rounded-full bg-white shadow-2xs border border-pink-200 flex items-center justify-center text-pink-600 text-base mb-2">
+          <img src={product.images[0]} alt={product.title} width={130} height={130} className="rounded-full"/>
         </div>
         <h3 className="font-serif font-bold text-stone-900 text-sm group-hover:text-pink-700 transition line-clamp-2 max-w-55">
           {product.title}

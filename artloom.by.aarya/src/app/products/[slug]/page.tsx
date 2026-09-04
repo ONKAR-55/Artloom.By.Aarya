@@ -95,13 +95,13 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
           {/* Left Column: Clean Visual Showcase (Text/Motif block without images) */}
           <div className="md:col-span-5 space-y-4">
             <div className="bg-linear-to-br from-pink-50 via-pink-100/70 to-pink-50 rounded-3xl p-8 border border-pink-200/80 text-center flex flex-col items-center justify-center min-h-75 shadow-xs">
-              <div className="w-16 h-16 rounded-full bg-white shadow-xs border border-pink-200 flex items-center justify-center text-2xl mb-3">
-                🌸
+              <div className="w-auto h-auto rounded-full bg-white shadow-xs border border-pink-200 flex items-center justify-center text-2xl mb-3">
+                <img src={product.images[0]} alt={product.title} width={200} height={200} className="rounded-full"/>
               </div>
 
               {product.featuredMotif && (
                 <span className="bg-white text-pink-700 text-xs font-bold px-3 py-1 rounded-full border border-pink-200 shadow-2xs mb-2">
-                  Motif: {product.featuredMotif}
+                  {product.featuredMotif}
                 </span>
               )}
 

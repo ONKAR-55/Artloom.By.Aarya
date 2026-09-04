@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Sparkles, Truck, RefreshCw, Layers } from "lucide-react";
+import { Sparkles, Truck, RefreshCw, Layers, Phone } from "lucide-react";
 import {motion} from "framer-motion";
 
 export function Footer() {
@@ -11,6 +11,7 @@ export function Footer() {
           <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.1 }}
           className="flex items-center gap-2.5 p-2 rounded-xl bg-pink-50/50 border border-pink-200 shadow-xs hover:shadow-md shadow-amber-100 transition-all duration-400 hover:scale-105">
             <Sparkles className="w-4 h-4 text-pink-500 shrink-0" />
             <div>
@@ -22,6 +23,7 @@ export function Footer() {
           <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
           className="flex items-center gap-2.5 p-2 rounded-xl bg-pink-50/50 border border-pink-200 shadow-xs hover:shadow-md shadow-amber-100 transition-all duration-400 hover:scale-105">
             <RefreshCw className="w-4 h-4 text-pink-500 shrink-0" />
             <div> 
@@ -33,6 +35,7 @@ export function Footer() {
           <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
           className="flex items-center gap-2.5 p-2 rounded-xl bg-pink-50/50 border border-pink-200 shadow-xs hover:shadow-md shadow-amber-100 transition-all duration-400 hover:scale-105">
             <Layers className="w-4 h-4 text-pink-500 shrink-0" />
             <div>
@@ -44,6 +47,7 @@ export function Footer() {
           <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
           className="flex items-center gap-2.5 p-2 rounded-xl bg-pink-50/50 border border-pink-200 shadow-xs hover:shadow-md shadow-amber-100 transition-all duration-400 hover:scale-105">
             <Truck className="w-4 h-4 text-pink-500 shrink-0" />
             <div>
@@ -54,7 +58,11 @@ export function Footer() {
         </div>
 
         {/* Footer Navigation & Brand */}
-        <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.3 }}
+        className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <div className="flex items-center gap-2">
             <span className="text-pink-600 font-serif font-bold text-base">
               Artloom.By.Aarya 🌸
@@ -63,6 +71,10 @@ export function Footer() {
             <span className="text-stone-500 text-[11px]">
               Handcrafted Woolen Rangolis &amp; Personalized Decor
             </span>
+            <div className="flex items-center gap-1">
+              <Phone className="w-4 h-4 text-pink-500" />
+              <span className="text-stone-500 text-[11px]">+91 9876543210</span>
+            </div>
           </div>
 
           <div className="flex items-center gap-4 text-stone-600">
@@ -79,7 +91,7 @@ export function Footer() {
               Pooja Mats
             </Link>
           </div>
-        </div>
+        </motion.div>
 
         {/* Copyright */}
         <div className="pt-4 border-t border-pink-50 text-center text-[11px] text-stone-400">

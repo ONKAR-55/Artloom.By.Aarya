@@ -47,7 +47,11 @@ export default function Home() {
       <main className="flex-1">
         {/* 1. CLEAN HERO SECTION */}
         <section className="py-12 md:py-16 bg-pink-fade border-b border-pink-100">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-5">
+          <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.1 }}
+          className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-5">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-pink-200 text-xs text-pink-700 font-semibold shadow-2xs">
               <Sparkles className="w-3.5 h-3.5 text-pink-500 fill-pink-500" />
               <span>Personalized Handmade Decor</span>
@@ -76,17 +80,20 @@ export default function Home() {
                 Woolen Mat Rangolis
               </Link>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* 2. SACRED MOTIFS BAR */}
         <section className="py-4 bg-white border-b border-pink-100 sticky top-16 z-20">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="max-w-6xl mx-auto px-4 sm:px-6">
             <MotifFilterBar
               selectedMotif={selectedMotif}
-              onSelectMotif={setSelectedMotif}
-            />
-          </div>
+              onSelectMotif={setSelectedMotif}/>
+          </motion.div>
         </section>
 
         {/* 3. CLEAN CATEGORIES ROW (Simple text blocks without heavy images) */}
@@ -99,8 +106,7 @@ export default function Home() {
             <h2 className="font-serif text-xl font-bold text-stone-900">Explore Collections</h2>
             <Link
               href="/products"
-              className="text-xs font-semibold text-pink-600 hover:text-pink-700 flex items-center gap-1"
-            >
+              className="text-xs font-semibold text-pink-600 hover:text-pink-700 flex items-center gap-1">
               View All <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </motion.div>
@@ -114,8 +120,7 @@ export default function Home() {
               <Link
                 key={cat.id}
                 href={`/products?category=${cat.slug}`}
-                className="p-4 rounded-xl bg-white border border-pink-100 hover:border-pink-300 hover:bg-pink-50/50 transition-all text-center space-y-1 shadow-2xl group hover:shadow-amber-100 duration-300"
-              >
+                className="p-4 rounded-xl bg-white border border-pink-100 hover:border-pink-300 hover:bg-pink-50/50 transition-all text-center space-y-1 shadow-2xl group hover:shadow-amber-100 duration-300">
                 <div className="w-8 h-8 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center mx-auto text-sm group-hover:scale-105 transition">
                   🌸
                 </div>
